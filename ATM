@@ -1,0 +1,62 @@
+Balance = 5000
+
+def ATM(): 
+  currentBalance = Balance
+  while(True):
+    print("""
+    1 == check the Current Balance
+    2 == withdraw
+    3 == deposite
+    4 == Transfer
+    5 == Exit
+    """)
+
+    choice = int(input("enter your choice")) 
+    if choice == 1:
+       CurrentBalance = check("CurrentBalance")
+    elif choice == 2:
+       cash = int(input("Enter the withdraw amount"))
+       CurrentBalance = withdraw("CurrentBalance, cash")
+    elif choice == 3:
+       cash = int(input("Enter the deposit amount"))
+       CurrentBalance = deposit("CurrentBalance, cash")
+    elif choice == 4:
+       cash = int(input("Enter the transfer amount"))
+       CurrentBalance = transfer("CurrentBalance, cash")
+    elif choice == 5:
+        print("Thankyou for using our bank services")
+        break
+    else:
+      print("Not valid choice")
+
+def check(CurrentBalance):
+  CurrentBalance = ("Balance")
+  print (f"The Current balance is:{CurrentBalance}")
+  return CurrentBalance
+def withdraw(currentBalance, cash):
+  if(cash <=currentBalance):
+    currentBalance = CurrentBalance - cash
+    print(f"The remaining balance is:{CurrentBalance}")
+  else:
+    print("insufficient funds!")
+  return CurrentBalance 
+   
+def deposit(CurrentBalance, cash):
+   CurrentBalance = CurrentBalance + cash
+   print(f"the remaining balance is {CurrentBalance}")
+   return CurrentBalance
+
+def transfer(CurrentBalance,cash):
+  if(cash <= CurrentBalance):
+    CurrentBalance = CurrentBalance + cash
+    print(f"the remaining balance is {CurrentBalance}")
+  else:
+    print("insufficient funds!")
+
+ATM()  
+
+
+     
+
+       
+
